@@ -8,5 +8,6 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 add_executable(tcp_server
   main.cpp
   policies/synchronous.cpp
+  policies/connection_policy.cpp
   policies/thread_per_connection.cpp
 )

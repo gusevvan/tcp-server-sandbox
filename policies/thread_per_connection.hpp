@@ -10,8 +10,6 @@ public:
     ThreadPerConnection(const std::string& reply): ConnectionPolicy(reply) {}
     void run(int socket) override;
 private:
-    void handleConnection(int connection);
-
     std::vector<std::jthread> connectionThreads; 
 };
 

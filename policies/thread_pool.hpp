@@ -40,13 +40,7 @@ private:
                 connection = connections.front();
                 connections.pop();
             }
-            size_t size = read(connection, buffer, sizeof(buffer) - 1);
-            if (size == -1) {
-                std::cout << "Incorrect reading" << std::endl;
-            }
-            send(connection, reply.c_str(), reply.size(), 0);
-            std::this_thread::sleep_for(10ms);
-            close(connection);
+            handleConnection(connection, true);
         }
     }
 

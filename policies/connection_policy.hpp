@@ -7,10 +7,11 @@
 
 class ConnectionPolicy {
 public:
-    ConnectionPolicy(const std::string& reply): reply{reply} {}
+    ConnectionPolicy(const std::string& reply);
     virtual void run(int socket) = 0;
     virtual ~ConnectionPolicy() {};
 protected:
+    virtual void handleConnection(int connection, bool sleep = false);
     char buffer[MAX_BUFFER + 1];
     const std::string reply; 
 };
