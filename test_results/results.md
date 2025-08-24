@@ -105,3 +105,37 @@ Transfer/sec:    100.28KB
 Requests/sec:   1952.74
 Transfer/sec:    108.70KB
 ```
+
+## Thread Pool with 10 threads
+
+```
+4 threads and 100 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   102.38ms    6.15ms 188.46ms   95.10%
+    Req/Sec   243.11     16.71   303.00     91.19%
+  Latency Distribution
+     50%  101.43ms
+     75%  102.14ms
+     90%  103.34ms
+     99%  132.62ms
+  58140 requests in 1.00m, 3.16MB read
+Requests/sec:    967.82
+Transfer/sec:     53.87KB
+```
+
+## Event loop
+
+```
+ 4 threads and 100 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    11.86ms    6.44ms  93.12ms   72.97%
+    Req/Sec     1.28k   246.81     2.68k    73.31%
+  Latency Distribution
+     50%   10.93ms
+     75%   15.15ms
+     90%   19.81ms
+     99%   32.59ms
+  306401 requests in 1.00m, 16.66MB read
+Requests/sec:   5100.16
+Transfer/sec:    283.90KB
+```
