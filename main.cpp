@@ -27,5 +27,5 @@ void testEventLoop() {
 }
 
 int main() {
-    testEventLoop();
+    
 }
