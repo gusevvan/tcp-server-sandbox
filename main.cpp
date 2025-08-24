@@ -16,8 +16,9 @@ void testThreadPerConnection() {
     httpServer.run();
 }
 
+template <int numThreads>
 void testThreadPool() {
-    TcpServer<ThreadPool<10>> httpServer(1234, SAMPLE_HTTP_REPLY);
+    TcpServer<ThreadPool<numThreads>> httpServer(1234, SAMPLE_HTTP_REPLY);
     httpServer.run();
 }
 
