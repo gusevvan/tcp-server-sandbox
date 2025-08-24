@@ -10,4 +10,5 @@ add_executable(tcp_server
   policies/synchronous.cpp
   policies/connection_policy.cpp
   policies/thread_per_connection.cpp
+  policies/event_loop.cpp
 )

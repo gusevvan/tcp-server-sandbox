@@ -1,4 +1,5 @@
 #include "tcp_server.hpp"
+#include "policies/event_loop.hpp"
 #include "policies/synchronous.hpp"
 #include "policies/thread_per_connection.hpp"
 #include "policies/thread_pool.hpp"
@@ -20,6 +21,11 @@ void testThreadPool() {
     httpServer.run();
 }
 
+void testEventLoop() {
+    TcpServer<EventLoop> httpServer(1234, SAMPLE_HTTP_REPLY);
+    httpServer.run();
+}
+
 int main() {
-    testThreadPool();
+    testEventLoop();
 }
