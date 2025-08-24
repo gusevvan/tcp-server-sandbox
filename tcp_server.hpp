@@ -26,7 +26,7 @@ public:
     }
 
     void run() {
-        int listenStatus = listen(_socket, 0);
+        int listenStatus = listen(_socket, SOMAXCONN);
         if (listenStatus < 0) {
             throw std::runtime_error("Failed to start server");
         }
